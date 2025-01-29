@@ -1,0 +1,42 @@
+.descr-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 5px;
+    max-width: 1200px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        background-color: rgba(0, 0, 0, 0.5); // Полупрозрачный фон
+        color: white; // Белый текст
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        background-color: rgba(0, 0, 0, 0.8); // Изменение фона при наведении
+    }
+
+    .item {
+        min-width: 400px;
+        margin-left: 60px;
+
+        .year {
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #3877EE;
+        }
+
+        .text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            color: #42567A;
+            margin-top: 15px;
+        }
+    }
+}

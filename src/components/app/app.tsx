@@ -3,7 +3,9 @@ import './app.scss';
 
 const App = () => {
     return (
-        <Promo />
+        <>
+            <Promo />
+        </>
     )
 }
 

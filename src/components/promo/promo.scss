@@ -42,40 +42,50 @@
             background-color: transparent;
             border-radius: 50%;
             border: 1px solid rgba(66, 86, 122, 0.1);
+            transform: rotate(0deg);
+            transform-origin: center;
 
             .one-four {
                 position: absolute;
                 height: 530px;
                 transform: rotate(60deg);
                 transform-origin: center;
+                font-size: 1px;
             }
 
             .one {
                 position: absolute;
                 top: -5px;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
                 border-radius: 50%;
                 left: 50%;
                 transform: translateX(-50%);
+                cursor: pointer;
+
+                .one-inner {
+                    transform: rotate(-60deg);
+                }
             }
 
             .one:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 top: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, top 0.3s ease;
+                font-size: 20px;
             }
 
             .four {
                 position: absolute;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
@@ -83,15 +93,24 @@
                 bottom: -5px;
                 left: 50%;
                 transform: translateX(-50%);
+                cursor: pointer;
+
+                .four-inner {
+                    transform: rotate(-60deg);
+                }
             }
 
             .four:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 bottom: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, bottom 0.3s ease;
+                font-size: 20px;
             }
 
             .two-five {
@@ -99,34 +118,42 @@
                 height: 530px;
                 transform: rotate(120deg);
                 transform-origin: center;
+                font-size: 1px;
             }
 
             .two {
                 position: absolute;
                 top: -5px;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
                 border-radius: 50%;
                 left: 50%;
                 transform: translateX(-50%);
+                cursor: pointer;
+
+                .two-inner {
+                    transform: rotate(-120deg);
+                }
             }
 
             .two:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 top: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, top 0.3s ease;
+                font-size: 20px;
             }
 
             .five {
                 position: absolute;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
@@ -134,15 +161,24 @@
                 bottom: -5px;
                 left: 50%;
                 transform: translateX(-50%);
+                cursor: pointer;
+
+                .five-inner {
+                    transform: rotate(-120deg);
+                }
             }
 
             .five:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 bottom: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, bottom 0.3s ease;
+                font-size: 20px;
             }
 
             .three-six {
@@ -150,34 +186,43 @@
                 height: 530px;
                 transform: rotate(180deg);
                 transform-origin: center;
+                font-size: 1px;
             }
 
             .three {
                 position: absolute;
                 top: -5px;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
                 border-radius: 50%;
                 left: 50%;
                 transform: translateX(-50%);
+                font-size: 1px;
+                cursor: pointer;
+
+                .three-inner {
+                    transform: rotate(-180deg);
+                }
             }
 
             .three:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 top: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, top 0.3s ease;
+                font-size: 20px;
             }
 
             .six {
                 position: absolute;
                 display: block;
-                content: "";
                 width: 10px;
                 height: 10px;
                 background-color: #42567A;
@@ -185,15 +230,24 @@
                 bottom: -5px;
                 left: 50%;
                 transform: translateX(-50%);
+                cursor: pointer;
+
+                .six-inner {
+                    transform: rotate(-180deg);
+                }
             }
 
             .six:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 53px;
                 height: 53px;
                 background-color: #fff;
                 bottom: -21px;
                 border: 1px solid #42567A;
                 transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, bottom 0.3s ease;
+                font-size: 20px;
             }
         }
 
@@ -210,8 +264,8 @@
 
     .promo_title {
         position: absolute;
-        margin-top: 170px;
-        margin-left: 80px;
+        top: 120px;
+        left: 80px;
         font-size: 56px;
         color: #42567A;
         line-height: 67px;
