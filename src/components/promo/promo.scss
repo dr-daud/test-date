@@ -1,14 +1,12 @@
 .container {
-    background-color: #F4F5F9;
-
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        width: 1440px;
+        max-width: 1440px;
         height: 100vh;
-        margin: 0 160px 0 320px;
+        margin: 0 8vw 0 16vw;
         border-left: 1px solid rgba(66, 86, 122, 0.1);
         border-right: 1px solid rgba(66, 86, 122, 0.1);
 
@@ -91,10 +89,13 @@
         position: absolute;
         bottom: 10px;
         left: 150px;
+        color: #42567A;
+
 
         .buttons {
             position: absolute;
             bottom: 200px;
+            left: -70px;
 
             div {
                 display: flex;
@@ -120,7 +121,7 @@
     }
 
 
-    .promo_title {
+    .promo-title {
         position: absolute;
         top: 120px;
         left: 80px;
@@ -129,7 +130,7 @@
         line-height: 67px;
     }
 
-    .promo_title::before {
+    .promo-title::before {
         content: "";
         position: absolute;
         top: 10px;
@@ -162,4 +163,120 @@
     .date-end {
         color: #ef5da8;
     }
+
+    @media (max-width: 1600px) {
+        .promo-title {
+            top: 90px;
+            font-size: 50px;
+            line-height: 55px;
+        }
+
+        .main-date-wrapper {
+            font-size: 170px;
+            width: 800px;
+        }
+
+        .buttons {
+            left: -70px;
+        }
+    }
+
+    @media(max-width: 1440px) {
+        .promo-title {
+            font-size: 40px;
+            left: 50px;
+            line-height: 50px;
+        }
+
+        .promo-title::before {
+            left: -50px;
+        }
+    }
+
+
+    @media(max-width: 1280px) {
+        .wrapper .circle {
+            width: 340px;
+            height: 340px;
+        }
+
+        .main-date-wrapper {
+            width: 690px;
+            font-size: 140px;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        .wrapper {
+            border: none;
+            margin: 0;
+            width: 100%;
+        }
+
+        .wrapper .circle {
+            display: none;
+        }
+
+        .main-date-wrapper {
+            font-size: 80px;
+            width: 420px;
+        }
+
+        .middle-vertical {
+            display: none;
+        }
+
+        .promo-title {
+            top: 59px;
+            left: 20px;
+        }
+
+        .promo-title::before {
+            display: none;
+        }
+
+        .wrapper .middle-horizontal {
+            top: 60%;
+        }
+
+        .descr {
+
+            .buttons {
+                bottom: 0px;
+                left: -110px;
+
+                .next-button,
+                .prev-button {
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 8px;
+                    font-size: 14px;
+                    margin-top: 10px;
+
+                    img {
+                        width: 6px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    @media(max-width: 320px) {
+        .promo-title {
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        .main-date-wrapper {
+            position: absolute;
+            width: 273px;
+            font-size: 56px;
+        }
+
+        .wrapper.middle-horizontal {
+            margin-top: 57px;
+        }
+    }
+
 }

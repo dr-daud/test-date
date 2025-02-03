@@ -1,11 +1,13 @@
-import "./eventDescr.scss";
+import Slider, { Settings } from "react-slick";
 import { useRef } from "react";
+
 import { IPeriodItem } from "../../types/types";
+import { PERIOD_DATA } from "../../constants";
+import arrow from "../../assets/arrow.png";
+
+import "./eventDescr.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider, { Settings } from "react-slick";
-import arrow from "../../assets/arrow.png";
-import { PERIOD_DATA } from "../../constants";
 
 function SampleNextArrow(props: any) {
     const { onClick } = props;
@@ -39,20 +41,34 @@ const EventDescr = ({ currentPeriod }: { currentPeriod: number }) => {
         prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 600,
+                breakpoint: 1600,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    initialSlide: 2,
+                    infinite: false,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    infinite: false,
+                    dots: true,
+                    arrows: false
+                },
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    infinite: false,
+                    dots: true,
+                    arrows: false
                 },
             },
             {
@@ -60,6 +76,10 @@ const EventDescr = ({ currentPeriod }: { currentPeriod: number }) => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    initialSlide: 0,
+                    infinite: false,
+                    dots: true,
+                    arrows: false
                 },
             },
         ],

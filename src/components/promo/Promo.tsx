@@ -1,16 +1,20 @@
-import { useState } from 'react';
-import EventDescr from '../eventDescr/eventDescr';
-import { PERIOD_DATA } from "../../constants";
 import CountUp from "react-countup";
+
+import { useState } from 'react';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { PERIOD_DATA } from "../../constants";
+import EventDescr from '../eventDescr/eventDescr';
+
+import './promo.scss';
 import nextArr from "../../assets/next-arr.png";
 import prevArr from "../../assets/prev-arr.png";
-import './promo.scss';
 
 const Promo = () => {
 
+    const media = useMediaQuery('(min-width: 1281px)');
     const items = [1, 2, 3, 4, 5, 6];
-    const name = ["Категория", "Кино", "Литература", "Категория", "Категория", "Наука"]
-    const radius = 265;
+    const names = ["Категория", "Кино", "Литература", "Категория", "Категория", "Наука"]
+    const radius = media ? 265 : 170;
     const [rotation, setRotation] = useState(30);
     const [selected, setSelected] = useState<number>(0);
     const periodData = PERIOD_DATA[selected];
@@ -18,14 +22,16 @@ const Promo = () => {
         from: periodData[0].year,
         to: periodData[periodData.length - 1].year,
     };
+
+    // для корректного воспроизведения анимации чисел
     const [prevYears, setPrevYears] = useState<{ from: number; to: number }>(
         years
     );
 
     const handleClick = (item: number) => {
-        setSelected(item - 1)
         const index = items.indexOf(item)
         const currentAngle = -90 + index * 60
+        setSelected(item - 1)
         setRotation(-60 - currentAngle)
         setPrevYears(years)
     }
@@ -33,7 +39,7 @@ const Promo = () => {
     return (
         <div className="container">
             <div className="wrapper">
-                <h1 className="promo_title">
+                <h1 className="promo-title">
                     Исторические <br />
                     даты
                 </h1>
@@ -82,7 +88,7 @@ const Promo = () => {
                                     >
                                         {item}
                                     </button>
-                                    <div className={selected === index ? "name" : "no-name"}>{name[index]}</div>
+                                    <div className={selected === index ? "name" : "no-name"}>{names[index]}</div>
                                 </div>
                             )
                         })}

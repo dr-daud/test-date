@@ -1,10 +1,8 @@
 .descr-wrapper {
     position: absolute;
     display: block;
-    justify-content: space-around;
-    align-items: center;
     bottom: 5px;
-    max-width: 1200px;
+    max-width: 62vw;
     margin-top: 56px;
 
     .arrow {
@@ -24,17 +22,18 @@
     .prev-button {
         top: 35%;
         transform: rotate(180deg);
-        left: -60px;
+        left: -3vw;
     }
 
     .next-button {
         top: 35%;
-        right: -60px;
+        right: -3vw;
     }
 
 
     .item {
-        min-width: 400px;
+        max-width: 21vw;
+        min-height: 165px;
 
         .year {
             font-size: 22px;
@@ -49,6 +48,85 @@
             line-height: 30px;
             color: #42567A;
             margin-top: 15px;
+        }
+    }
+
+    @media (max-width: 1600px) {
+        .prev-button {
+            left: -4vw;
+        }
+
+        .descr-wrapper {
+            max-width: 60vw;
+        }
+    }
+
+    @media(max-width: 1440px) {
+        .descr-wrapper {
+            max-width: 56vw;
+        }
+    }
+
+}
+
+@media(max-width: 1280px) {
+    .descr-wrapper {
+        max-width: 32vw;
+        left: 50%;
+        transform: translateX(50%);
+    }
+
+    .slick-dots {
+        left: -100px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .descr-wrapper {
+        left: 0;
+        max-width: 85vw;
+        bottom: 85px;
+        transform: translateX(0);
+
+        .item {
+            .text {
+                max-width: 200px;
+            }
+        }
+
+        .slick-dots {
+            left: 0px;
+        }
+
+        .slick-track {
+            margin-left: 0;
+        }
+    }
+
+    @media(max-width: 480px) {
+        .descr-wrapper {
+            left: -120px;
+            bottom: 38px;
+            max-width: 90vw;
+
+            .item {
+                .year {
+                    font-size: 16px;
+                }
+
+                .text {
+                    max-width: 220px;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        .descr {
+            .buttons {
+                bottom: -10px;
+                left: -120px;
+            }
         }
     }
 }

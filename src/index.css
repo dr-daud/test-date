@@ -4,3 +4,7 @@
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
 }
+
+body {
+    background-color: #F4F5F9;
+}
