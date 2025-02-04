@@ -63,7 +63,7 @@ const EventDescr = ({ currentPeriod }: { currentPeriod: number }) => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: false,

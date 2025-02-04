@@ -262,6 +262,13 @@
 
     }
 
+    @media(max-width:480px) {
+        .main-date-wrapper {
+            font-size: 63px;
+            width: 305px;
+        }
+    }
+
     @media(max-width: 320px) {
         .promo-title {
             font-size: 30px;

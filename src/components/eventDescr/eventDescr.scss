@@ -74,6 +74,8 @@
         max-width: 32vw;
         left: 50%;
         transform: translateX(50%);
+        margin-top: 50px;
+        bottom: 20px;
     }
 
     .slick-dots {
@@ -106,8 +108,8 @@
     @media(max-width: 480px) {
         .descr-wrapper {
             left: -120px;
-            bottom: 38px;
-            max-width: 90vw;
+            bottom: 110px;
+            max-width: 68vw;
 
             .item {
                 .year {
