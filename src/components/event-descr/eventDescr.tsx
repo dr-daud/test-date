@@ -1,5 +1,6 @@
 import Slider, { Settings } from "react-slick";
 import { useRef } from "react";
+import { MouseEventHandler } from "react";
 
 import { IPeriodItem } from "../../types/types";
 import { PERIOD_DATA } from "../../constants";
@@ -9,8 +10,11 @@ import "./eventDescr.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function SampleNextArrow(props: any) {
-    const { onClick } = props;
+interface ArrowProps {
+    onClick?: MouseEventHandler<HTMLDivElement>;
+}
+
+function SampleNextArrow({ onClick }: ArrowProps) {
     return (
         <div className={`arrow next-button`} onClick={onClick}>
             <img src={arrow} />
@@ -18,8 +22,7 @@ function SampleNextArrow(props: any) {
     );
 }
 
-function SamplePrevArrow(props: any) {
-    const { onClick } = props;
+function SamplePrevArrow({ onClick }: ArrowProps) {
     return (
         <div className={`arrow prev-button`} onClick={onClick}>
             <img src={arrow} />

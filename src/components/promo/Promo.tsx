@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import { useState } from 'react';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { PERIOD_DATA } from "../../constants";
-import EventDescr from '../eventDescr/eventDescr';
+import EventDescr from '../event-descr/eventDescr';
 
 import './promo.scss';
 import nextArr from "../../assets/next-arr.png";

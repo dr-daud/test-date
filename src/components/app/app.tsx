@@ -1,4 +1,4 @@
-import Promo from '../promo/Promo'
+import Promo from '../promo/promo'
 import './app.scss';
 
 const App = () => {
