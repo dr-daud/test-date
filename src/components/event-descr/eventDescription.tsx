@@ -6,7 +6,7 @@ import { IPeriodItem } from "../../types/types";
 import { PERIOD_DATA } from "../../constants";
 import arrow from "../../assets/arrow.png";
 
-import "./eventDescr.scss";
+import "./eventDescription.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -30,7 +30,7 @@ function SamplePrevArrow({ onClick }: ArrowProps) {
     );
 }
 
-const EventDescr = ({ currentPeriod }: { currentPeriod: number }) => {
+const EventDescription = ({ currentPeriod }: { currentPeriod: number }) => {
     const arrowRef = useRef<Slider | null>(null);
 
     const periodData = PERIOD_DATA[currentPeriod];
@@ -102,4 +102,4 @@ const EventDescr = ({ currentPeriod }: { currentPeriod: number }) => {
     );
 };
 
-export default EventDescr;
+export default EventDescription;

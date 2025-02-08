@@ -86,7 +86,7 @@
 @media(max-width: 1024px) {
     .descr-wrapper {
         left: 0;
-        max-width: 85vw;
+        max-width: 75vw;
         bottom: 85px;
         transform: translateX(0);
 
@@ -107,8 +107,7 @@
 
     @media(max-width: 480px) {
         .descr-wrapper {
-            left: -120px;
-            bottom: 110px;
+            bottom: 20px;
             max-width: 68vw;
 
             .item {
@@ -122,13 +121,11 @@
                 }
             }
 
-        }
-
-        .descr {
-            .buttons {
-                bottom: -10px;
-                left: -120px;
+            .slick-dots {
+                left: 40px;
+                bottom: -100px;
             }
+
         }
     }
 }

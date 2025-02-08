@@ -1,9 +1,9 @@
 import CountUp from "react-countup";
-
 import { useState } from 'react';
+
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { PERIOD_DATA } from "../../constants";
-import EventDescr from '../event-descr/eventDescr';
+import EventDescription from '../event-descr/eventDescription';
 
 import './promo.scss';
 import nextArr from "../../assets/next-arr.png";
@@ -11,10 +11,10 @@ import prevArr from "../../assets/prev-arr.png";
 
 const Promo = () => {
 
-    const media = useMediaQuery('(min-width: 1281px)');
+    const isDesktop = useMediaQuery('(min-width: 1281px)');
     const items = [1, 2, 3, 4, 5, 6];
-    const names = ["Категория", "Кино", "Литература", "Категория", "Категория", "Наука"]
-    const radius = media ? 265 : 170;
+    const names = ["Медицина", "Кино", "Литература", "Авто", "Природа", "Наука"]
+    const radius = isDesktop ? 260 : 170;
     const [rotation, setRotation] = useState(30);
     const [selected, setSelected] = useState<number>(0);
     const periodData = PERIOD_DATA[selected];
@@ -39,35 +39,32 @@ const Promo = () => {
     return (
         <div className="container">
             <div className="wrapper">
-                <h1 className="promo-title">
-                    Исторические <br />
-                    даты
-                </h1>
                 <div className="line middle-vertical"></div>
                 <div className="line middle-horizontal"></div>
-                <div
-                    style={{
-                        position: 'relative',
-                        width: radius * 2,
-                        height: radius * 2,
-                    }}
-                >
-                    <div className="main-date-wrapper">
-                        <div className="date-start">
-                            <CountUp start={prevYears.from} end={years.from} separator="" />
-                        </div>
-                        <div className="date-end">
-                            <CountUp start={prevYears.to} end={years.to} separator="" />
-                        </div>
+                <div className="main-date-wrapper">
+                    <div className="date-start">
+                        <CountUp start={prevYears.from} end={years.from} separator="" />
+                    </div>
+                    <div className="date-end">
+                        <CountUp start={prevYears.to} end={years.to} separator="" />
+                    </div>
+                </div>
+                <div className="inner-wrap">
+                    <div className="title-wrap">
+                        <h1 className="promo-title">
+                            Исторические <br />
+                            даты
+                        </h1>
                     </div>
                     <div className='circle'
                         style={{
+                            width: radius * 2,
+                            height: radius * 2,
                             transform: `rotate(${rotation}deg)`,
-                            transition: 'transform 1s ease',
                         }}
                     >
                         {items.map((item, index) => {
-                            const angle = (-90 + index * 60) * (Math.PI / 180)
+                            const angle = (-90 + index * (360 / items.length)) * (Math.PI / 180);
                             const x = radius * Math.cos(angle) + radius
                             const y = radius * Math.sin(angle) + radius
 
@@ -93,8 +90,6 @@ const Promo = () => {
                             )
                         })}
                     </div>
-                </div>
-                <div className="descr">
                     <div className="buttons">
                         <div className="circle-numbers">0{selected + 1}/0{items.length}</div>
                         <div>
@@ -108,7 +103,9 @@ const Promo = () => {
                                 <img src={nextArr} /></button>
                         </div>
                     </div>
-                    <EventDescr currentPeriod={selected} />
+                </div>
+                <div className="descr">
+                    <EventDescription currentPeriod={selected} />
                 </div>
             </div>
         </div >
